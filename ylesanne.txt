@@ -1,30 +1,44 @@
 Projekti teema: API-Call-põhine mitmeleheküljeline rakendus
 
+
 Üldnõuded
     Rakendus peab kasutama vähemalt ühte välist API-t.
     Rakendus ei tohi kasutada ilmastikuandmete API-sid.
+    Kasutada tuleb kaasaegset raamistikku või teeki (nt React, Vue, Angular või muu sarnane).
+----------------------------------------------------------------
     Rakendus peab koosnema mitmest leheküljest (vähemalt 3 erinevat vaadet).
     Projekt peab olema selgelt struktureeritud (nt eraldi kaustad komponentide, teenuste ja stiilide jaoks).
-    Kasutada tuleb kaasaegset raamistikku või teeki (nt React, Vue, Angular või muu sarnane).
+    
 
 Funktsionaalsus
     Rakendus peab tegema API päringut.
     Andmeid peab saama:
         kuvada loeteluna,
-        filtreerida või sorteerida,
         otsida (search funktsionaalsus).
-        Vähemalt üks vaade peab sisaldama detailvaadet (nt ühe elemendi detailid).
-    Rakendusel peab olema kasutajasõbralik navigeerimine (menüü või router).
+        filtreerida või sorteerida,
+
     API vastuste töötlemisel tuleb arvestada vigadega (error handling).
+    Rakendusel peab olema kasutajasõbralik navigeerimine (menüü või router).
+--------------------------------------------------------------------------
+        
+        Vähemalt üks vaade peab sisaldama detailvaadet (nt ühe elemendi detailid).
+    
+    
 
 Andmete haldus:
-    Vähemalt osa andmetest peab olema ajutiselt salvestatud (nt localStorage või sessionStorage).
     Valikuline: Rakendus peab näitama laadimisolekut (loading state) API päringute ajal.
+--------------------------------
+
+    Vähemalt osa andmetest peab olema ajutiselt salvestatud (nt localStorage või sessionStorage).
+    
 
 Kasutajaliides
-    UI peab olema mitmele seadmele sobiv (responsive design).
     Kujundus peab olema ühtne ja loogiline.
     Kasutada tuleb vähemalt ühte UI raamistikku või komponentide teeki (nt Material UI, Bootstrap).
+
+---------------------------------------
+    UI peab olema mitmele seadmele sobiv (responsive design).
+    
 
 Täiendavad nõuded
     Vähemalt üks järgmistest peab olema:
@@ -34,15 +48,11 @@ Täiendavad nõuded
 
 Tehnilised nõuded
     Kood peab olema versioonihalduses (nt Git) täiesti uus repositoorium.
+    
+-----------------------------------------------
+    
     Projekt peab sisaldama README faili, kus on:
         projekti kirjeldus
         kasutatud API dokumentatsioon
         juhend rakenduse käivitamiseks
     Kood peab olema loetav ja kommenteeritud.
-
-Näidisideed (valikuks)
-    Filmide/seriaalide rakendus (nt TMDb API)
-    Retseptide otsing (nt Spoonacular API)
-    Spordiandmete rakendus (nt Football-Data API)
-    Raamatute haldus (nt Google Books API)
-    GitHub profiilide uurimine (nt GitHub API)

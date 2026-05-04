@@ -1,0 +1,131 @@
+import { useState, useEffect } from 'react';
+import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
+
+
+export default function MenuApp() {
+    // See aitab määrata otsingu väärtust.
+    const [searchValue, setSearchValue] = useState("");
+    // See aitab määrata kategooriaid
+    const [categories, setCategories] = useState<string[]>([]);
+    // See aitab lehte vahetada.
+    const navigate = useNavigate();
+
+    const [searchParams] = useSearchParams();
+    const selectedCategory = searchParams.get('category') || "";
+
+    // See laeb API lehelt kategooiria loetelu
+    useEffect(() => {
+        fetch("https://api.chucknorris.io/jokes/categories")
+            .then(res => res.json())
+            .then(data => setCategories(data));
+    }, []);
+
+    const updateURL = (newQuery: string, newCat: string) => {
+        const params = new URLSearchParams();
+        if (newQuery) params.set('query', newQuery);
+        if (newCat) params.set('category', newCat);
+        params.set('page', '0');  // uus otsing algab nullist
+
+        navigate({
+            pathname: '/ChuckJokes',
+            search: `?${params.toString()}`
+        });
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const cat = searchParams.get('category') || '';
+        updateURL(searchValue, cat);
+        setSearchValue("");
+    };
+
+    const handleCategoryClick = (cat: string) => {
+        const currentQuery = searchParams.get('query') || 'chuck';
+        updateURL(currentQuery, cat);
+    };
+
+    return (
+            <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
+                <div className="container">
+                    <a className="navbar-brand" href="">
+                        <img src="./src/assets/Draakon-logo.svg"
+                        alt=""
+                        width="50"
+                        height="50"/>
+                    </a>
+
+                    <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul className="navbar-nav mb-2 mb-lg-0 me-auto">
+
+                            <li className="nav-item">
+                                <NavLink
+                                    className="nav-link"
+                                    to="/">
+                                    Home
+                                </NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink
+                                    className="nav-link"
+                                    to="/ChuckJokes">
+                                    Joke List
+                                </NavLink>
+                            </li>
+
+                            <li className="dropdown nav-item">
+                                <a href=""
+                                className="dropdown-toggle nav-link"
+                                id="navbarDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                   {selectedCategory ? `Category: ${selectedCategory}` : "All Categories"}
+                                </a>
+                                <ul className="dropdown-menu">
+                                    <li><a className="dropdown-item" href="#" onClick={() => handleCategoryClick("")}>All</a></li>
+                                    <li><hr className="dropdown-divider"/></li>
+                                    {categories.map(cat => (
+                                    <li key={cat}>
+                                        <a className="dropdown-item" href="#" onClick={() => handleCategoryClick(cat)}>
+                                            {cat}
+                                        </a>
+                                    </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <form className="d-flex" onSubmit={handleSubmit}>
+                            <input
+                                type="search"
+                                value={searchValue}
+                                onChange={e => setSearchValue(e.target.value)}
+                                className="form-control me-2"
+                                placeholder="search"
+                                aria-label="search"
+                            />
+                            <button
+                                className="btn btn-outline-success" type="submit">
+                                Search
+                            </button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </nav>
+    )
+}
