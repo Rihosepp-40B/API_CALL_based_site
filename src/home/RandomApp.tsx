@@ -6,7 +6,8 @@ interface JokeResponse {
 }
 
 export default function RandomApp() {
-  const [joke, setJoke] = useState<string>("");  // usestatis sulgudes on vaikimisi väärtus
+  // Sea naljad, paiguta laadimine ja errori seis RandomAPP'is
+  const [joke, setJoke] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 

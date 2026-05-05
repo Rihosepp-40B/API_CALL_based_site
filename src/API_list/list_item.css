@@ -1,0 +1,38 @@
+.i_shadow {
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    background: var(--bg);
+    margin-bottom: 15px;
+    list-style: none;
+    padding: 10px;
+    text-align: left;
+}
+
+.i_shadow:hover {
+    transform: scale(1.1) !important;
+    transition: transform 0.2s ease !important;
+    box-shadow: var(--accent) !important;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Tume poolläbipaistev taust */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Veendu, et see on kõige peal */
+}
+
+/* Popupi sisu aken */
+.modal-content {
+    max-width: 500px;
+    width: 90%;
+    background: var(--bg) !important;
+    border: var(--border);
+    color: var(--text);
+    position: relative;
+}

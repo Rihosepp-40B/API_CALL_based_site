@@ -1,9 +1,8 @@
 import { motion } from "framer-motion"
-import './App.css'
 import RandomApp from './RandomApp'
 
 export default function HomeApp() {
-  
+  // Tervitus leht
   return (
     <div className="container my-5">
       <motion.div

@@ -5,9 +5,11 @@ Projekti teema: API-Call-põhine mitmeleheküljeline rakendus
     Rakendus peab kasutama vähemalt ühte välist API-t.
     Rakendus ei tohi kasutada ilmastikuandmete API-sid.
     Kasutada tuleb kaasaegset raamistikku või teeki (nt React, Vue, Angular või muu sarnane).
-----------------------------------------------------------------
     Rakendus peab koosnema mitmest leheküljest (vähemalt 3 erinevat vaadet).
     Projekt peab olema selgelt struktureeritud (nt eraldi kaustad komponentide, teenuste ja stiilide jaoks).
+----------------------------------------------------------------
+    
+
     
 
 Funktsionaalsus
@@ -19,17 +21,19 @@ Funktsionaalsus
 
     API vastuste töötlemisel tuleb arvestada vigadega (error handling).
     Rakendusel peab olema kasutajasõbralik navigeerimine (menüü või router).
+    Vähemalt üks vaade peab sisaldama detailvaadet (nt ühe elemendi detailid).
 --------------------------------------------------------------------------
         
-        Vähemalt üks vaade peab sisaldama detailvaadet (nt ühe elemendi detailid).
+        
     
     
 
 Andmete haldus:
     Valikuline: Rakendus peab näitama laadimisolekut (loading state) API päringute ajal.
+    Vähemalt osa andmetest peab olema ajutiselt salvestatud (nt localStorage või sessionStorage).
 --------------------------------
 
-    Vähemalt osa andmetest peab olema ajutiselt salvestatud (nt localStorage või sessionStorage).
+    
     
 
 Kasutajaliides

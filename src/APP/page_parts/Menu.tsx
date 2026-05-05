@@ -7,10 +7,13 @@ export default function MenuApp() {
     const [searchValue, setSearchValue] = useState("");
     // See aitab määrata kategooriaid
     const [categories, setCategories] = useState<string[]>([]);
-    // See aitab lehte vahetada.
+    // See aitab lehte vahetada /& navigeerida.
     const navigate = useNavigate();
 
+    // See aitab URL'ist otsida
     const [searchParams] = useSearchParams();
+
+    // See aitab määrata kategooriat läbi URL'i
     const selectedCategory = searchParams.get('category') || "";
 
     // See laeb API lehelt kategooiria loetelu
@@ -20,6 +23,7 @@ export default function MenuApp() {
             .then(data => setCategories(data));
     }, []);
 
+    // See toimetab URLI uuendamist vastvalt otsingutele ja kategooriatele
     const updateURL = (newQuery: string, newCat: string) => {
         const params = new URLSearchParams();
         if (newQuery) params.set('query', newQuery);
@@ -32,6 +36,7 @@ export default function MenuApp() {
         });
     };
 
+    // see toimetab otsingute määramist valikut ning salvestab valiku URL'i
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const cat = searchParams.get('category') || '';
@@ -39,6 +44,7 @@ export default function MenuApp() {
         setSearchValue("");
     };
 
+    // See toimetab kategooria määramist ning URLI salvestamist
     const handleCategoryClick = (cat: string) => {
         const currentQuery = searchParams.get('query') || 'chuck';
         updateURL(currentQuery, cat);
@@ -96,16 +102,23 @@ export default function MenuApp() {
                                    {selectedCategory ? `Category: ${selectedCategory}` : "All Categories"}
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#" onClick={() => handleCategoryClick("")}>All</a></li>
+                                    <li><a className="dropdown-item" href="" onClick={() => handleCategoryClick("")}>All</a></li>
                                     <li><hr className="dropdown-divider"/></li>
                                     {categories.map(cat => (
                                     <li key={cat}>
-                                        <a className="dropdown-item" href="#" onClick={() => handleCategoryClick(cat)}>
+                                        <a className="dropdown-item" href="" onClick={() => handleCategoryClick(cat)}>
                                             {cat}
                                         </a>
                                     </li>
                                     ))}
                                 </ul>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    className="nav-link"
+                                    to="/Extra">
+                                    Extra
+                                </NavLink>
                             </li>
                         </ul>
 
