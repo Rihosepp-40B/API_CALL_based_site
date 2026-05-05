@@ -54,7 +54,7 @@ export default function MenuApp() {
             <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
                 <div className="container">
                     <a className="navbar-brand" href="">
-                        <img src="./src/assets/Draakon-logo.svg"
+                        <img src="../src/assets/Draakon-logo.svg"
                         alt=""
                         width="50"
                         height="50"/>
