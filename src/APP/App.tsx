@@ -18,14 +18,14 @@ export default function App() {
       <main>
         <Routes>
           <Route
-            path="/"
+            path="/API_CALL_based_site/"
             element={<HomeApp />} />
           <Route
-            path="/ChuckJokes"
+            path="/API_CALL_based_site/ChuckJokes"
             element={
               <ListApp />} />
           <Route
-            path="/Extra"
+            path="/API_CALL_based_site/Extra"
             element={
               <ExtraApp />} />
         </Routes>
