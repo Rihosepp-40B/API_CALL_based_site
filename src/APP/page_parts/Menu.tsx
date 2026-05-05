@@ -31,7 +31,7 @@ export default function MenuApp() {
         params.set('page', '0');  // uus otsing algab nullist
 
         navigate({
-            pathname: '/API_CALL_based_site/ChuckJokes',
+            pathname: '/ChuckJokes',
             search: `?${params.toString()}`
         });
     };
@@ -81,7 +81,7 @@ export default function MenuApp() {
                             <li className="nav-item">
                                 <NavLink
                                     className="nav-link"
-                                    to="/API_CALL_based_site/">
+                                    to="/">
                                     Home
                                 </NavLink>
                             </li>
@@ -89,7 +89,7 @@ export default function MenuApp() {
                             <li className="nav-item">
                                 <NavLink
                                     className="nav-link"
-                                    to="/API_CALL_based_site/ChuckJokes">
+                                    to="/ChuckJokes">
                                     Joke List
                                 </NavLink>
                             </li>
@@ -118,7 +118,7 @@ export default function MenuApp() {
                             <li className="nav-item">
                                 <NavLink
                                     className="nav-link"
-                                    to="/API_CALL_based_site/Extra">
+                                    to="/Extra">
                                     Extra
                                 </NavLink>
                             </li>
