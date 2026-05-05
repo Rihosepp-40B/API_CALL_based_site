@@ -45,7 +45,9 @@ export default function MenuApp() {
     };
 
     // See toimetab kategooria määramist ning URLI salvestamist
-    const handleCategoryClick = (cat: string) => {
+    const handleCategoryClick = (e: React.MouseEvent, cat: string) => {
+        e.preventDefault();
+
         const currentQuery = searchParams.get('query') || 'chuck';
         updateURL(currentQuery, cat);
     };
@@ -102,11 +104,11 @@ export default function MenuApp() {
                                    {selectedCategory ? `Category: ${selectedCategory}` : "All Categories"}
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="" onClick={() => handleCategoryClick("")}>All</a></li>
+                                    <li><a className="dropdown-item" href="/" onClick={(e) => handleCategoryClick(e, "")}>All</a></li>
                                     <li><hr className="dropdown-divider"/></li>
                                     {categories.map(cat => (
                                     <li key={cat}>
-                                        <a className="dropdown-item" href="" onClick={() => handleCategoryClick(cat)}>
+                                        <a className="dropdown-item" href="/" onClick={(e) => handleCategoryClick(e, cat)}>
                                             {cat}
                                         </a>
                                     </li>
