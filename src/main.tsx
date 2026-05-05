@@ -9,7 +9,7 @@ import App from './APP/App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/API_CALL_based_site">
       <App />
     </BrowserRouter>
   </StrictMode>,
