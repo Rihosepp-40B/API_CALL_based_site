@@ -1,11 +1,11 @@
 :root {
   --text: black;
   --text-h: #08060d;
-  --bg: #fff !important;
+  --bg: rgb(184, 185, 187);
   --border: #e5e4e7;
-  --code-bg: #f4f3ec;
+  --code-bg: rgb(204, 203, 196);
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px 3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(0, 0, 0, 0.2) 0 10px 15px 3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   --sans: Arial, Helvetica, sans-serif;
   --heading: Arial, Helvetica, sans-serif;
@@ -30,7 +30,7 @@
     --border: #2e303a;
     --code-bg: #1f2028;;
     --shadow:
-      rgba(255, 255, 255, 0.1) 0 5px 15px 5px, rgba(255, 255, 255, 0.05) 0 4px 6px -2px;
+      rgba(255, 255, 255, 0.2) 0 5px 15px 5px, rgba(255, 255, 255, 0.05) 0 4px 6px -2px;
   }
 
   #social .button-icon {
